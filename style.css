@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items:center;
+  overflow: hidden;
+}
+#navholder > span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: black;
+}
+#navholder > span:not(:last-child) {
+  margin-bottom: 7px;
+}
+#navholder,
+#navholder > span {
+  transition: all 0.4s ease-in-out;
+}
+#navholder.active {
+  transition-delay: 0.8s;
+  transform: rotate(45deg);
+}
+#navholder.active > span:nth-child(2) {
+  width: 0;
+}
+#navholder.active > span:nth-child(1),
+#navholder.active > span:nth-child(3) {
+  transition-delay: 0.4s;
+}
+#navholder.active > span:nth-child(1) {
+  transform: translateY(9px);
+}
+#navholder.active > span:nth-child(3) {
+  transform: translateY(-9px) rotate(90deg);
+}
